@@ -1,48 +1,55 @@
 let meses = new Map([
-
-[1,"Enero"],
-[2,"Febrero"],
-[3,"Marzo"],
-[4,"Abril"],
-[5,"Mayo"],
-[6,"Junio"],
-[7,"Julio"],
-[8,"Agosto"],
-[9,"Septiembre"],
-[10,"Octubre"],
-[11,"Noviembre"],
-[12,"Diciembre"]
-
+    [1, "Enero"],
+    [2, "Febrero"],
+    [3, "Marzo"],
+    [4, "Abril"],
+    [5, "Mayo"]
 ]);
 
-function buscarMes(){
+function mostrarMap() {
 
-    if(meses.has(5)){
+    let html = "";
 
-        alert(meses.get(5));
+    meses.forEach((valor, clave) => {
+
+        html += `<p><strong>${clave}</strong> → ${valor}</p>`;
+
+    });
+
+    document.getElementById("resultado").innerHTML = html;
+
+}
+
+function buscarMes() {
+
+    let numero = Number(prompt("Número del mes"));
+
+    if (meses.has(numero)) {
+
+        alert(meses.get(numero));
+
+    } else {
+
+        alert("No existe ese mes.");
 
     }
 
 }
 
-function agregarVerano(){
+function agregarMes() {
 
-    meses.set("Verano",["Junio","Julio","Agosto"]);
+    let clave = Number(prompt("Número"));
 
-    alert("Verano agregado.");
+    let valor = prompt("Nombre del mes");
 
-}
+    if (valor) {
 
-function imprimirMapa(){
+        meses.set(clave, valor);
 
-    let texto="";
+        mostrarMap();
 
-    meses.forEach(function(valor,clave){
-
-        texto += clave + " : " + valor + "<br>";
-
-    });
-
-    document.getElementById("resultado").innerHTML = texto;
+    }
 
 }
+
+window.onload = mostrarMap;
