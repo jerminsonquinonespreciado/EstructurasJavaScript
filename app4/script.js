@@ -1,68 +1,46 @@
-let frutas = [
+const arreglo = ["Ana", "Luis", "Pedro", "Ana", "María"];
 
-"Manzana",
-"Banano",
-"Pera",
-"Uva",
-"Mango"
+function mostrarArray() {
 
-];
-
-let conjunto = null;
-let mapa = null;
-
-function convertirSet(){
-
-    conjunto = new Set(frutas);
-
-    alert("Array convertido a Set.");
-
+    document.getElementById("resultado").innerHTML = `
+        <h3>📦 Array</h3>
+        ${arreglo.join("<br>")}
+    `;
 }
 
-function convertirMap(){
+function convertirSet() {
 
-    if(conjunto === null){
+    const conjunto = new Set(arreglo);
 
-        alert("Primero convierta el Array a Set.");
+    document.getElementById("resultado").innerHTML = `
+        <h3>📚 Set (sin duplicados)</h3>
+        ${Array.from(conjunto).join("<br>")}
+    `;
+}
 
-        return;
+function convertirMap() {
 
-    }
+    const conjunto = new Set(arreglo);
 
-    mapa = new Map();
+    const mapa = new Map();
 
-    let contador = 1;
+    let id = 1;
 
-    conjunto.forEach(function(fruta){
+    conjunto.forEach(nombre => {
 
-        mapa.set(contador,fruta);
-
-        contador++;
+        mapa.set(id++, nombre);
 
     });
 
-    alert("Set convertido a Map.");
+    let salida = "<h3>🗂 Map</h3>";
 
-}
+    mapa.forEach((valor, clave) => {
 
-function imprimirMap(){
-
-    if(mapa === null){
-
-        alert("Primero convierta a Map.");
-
-        return;
-
-    }
-
-    let texto="";
-
-    mapa.forEach(function(valor,clave){
-
-        texto += clave + " → " + valor + "<br>";
+        salida += `<p><strong>${clave}</strong> → ${valor}</p>`;
 
     });
 
-    document.getElementById("resultado").innerHTML = texto;
-
+    document.getElementById("resultado").innerHTML = salida;
 }
+
+window.onload = mostrarArray;

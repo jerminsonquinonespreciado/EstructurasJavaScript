@@ -1,23 +1,62 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-<meta charset="UTF-8">
-<title>Aplicación 4</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplicación 4 - Transformaciones</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-<h2>Aplicación 4</h2>
+<div class="container">
 
-<button onclick="convertirSet()">Convertir a Set</button>
+<div class="card">
 
-<button onclick="convertirMap()">Convertir a Map</button>
+<h1>🔄 Aplicación 4</h1>
 
-<button onclick="imprimirMap()">Imprimir Map</button>
+<p>
+Conversión entre <strong>Array</strong>, <strong>Set</strong> y <strong>Map</strong>.
+</p>
 
-<hr>
+<div class="botones">
+
+<button onclick="mostrarArray()">
+📦 Ver Array
+</button>
+
+<button onclick="convertirSet()">
+📚 Convertir a Set
+</button>
+
+<button onclick="convertirMap()">
+🗂 Convertir a Map
+</button>
+
+</div>
+
+<div class="resultado">
+
+<h3>Resultado</h3>
 
 <div id="resultado"></div>
+
+</div>
+
+<a class="volver" href="../index.html">
+← Volver al menú principal
+</a>
+
+</div>
+
+</div>
 
 <script src="script.js"></script>
 
