@@ -1,13 +1,29 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<title>Aplicación 1</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplicación 1 - Array</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-<h2>Aplicación 1 - Array</h2>
+<div class="container">
+
+<div class="card">
+
+<h1>📦 Aplicación 1</h1>
+
+<p>Operaciones básicas con un Array.</p>
+
+<div class="botones">
 
 <button onclick="agregarInicio()">Agregar al inicio</button>
 
@@ -15,11 +31,25 @@
 
 <button onclick="eliminarTercero()">Eliminar tercer elemento</button>
 
-<button onclick="imprimirArray()">Imprimir Array</button>
+<button onclick="imprimirArray()">Mostrar Array</button>
 
-<hr>
+</div>
+
+<div class="resultado">
+
+<h3>Resultado</h3>
 
 <div id="resultado"></div>
+
+</div>
+
+<a href="../index.html" class="volver">
+← Volver al menú principal
+</a>
+
+</div>
+
+</div>
 
 <script src="script.js"></script>
 
