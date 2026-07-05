@@ -1,49 +1,42 @@
 let libros = new Set([
-    "1984",
-    "Clean Code",
+    "Cien años de soledad",
     "El Principito",
-    "Don Quijote",
-    "Hábitos Atómicos"
+    "Don Quijote"
 ]);
 
-function agregarLibro(){
+function mostrarLibros() {
 
-    let libro = prompt("Nombre del libro");
+    document.getElementById("resultado").innerHTML =
+        Array.from(libros).join("<br>");
 
-    if(libro){
+}
+
+function agregarLibro() {
+
+    let libro = prompt("Ingrese el nombre del libro");
+
+    if (libro) {
 
         libros.add(libro);
 
+        mostrarLibros();
+
     }
 
 }
 
-function eliminarLibro(){
+function eliminarLibro() {
 
     let libro = prompt("Libro a eliminar");
 
-    if(libros.delete(libro)){
+    if (libro) {
 
-        alert("Libro eliminado.");
+        libros.delete(libro);
 
-    }else{
-
-        alert("El libro no existe.");
+        mostrarLibros();
 
     }
 
 }
 
-function imprimirSet(){
-
-    let texto="";
-
-    libros.forEach(function(libro){
-
-        texto += libro + "<br>";
-
-    });
-
-    document.getElementById("resultado").innerHTML = texto;
-
-}
+window.onload = mostrarLibros;
